@@ -1,7 +1,8 @@
 # Survivors Game EX
 An extension of the [GDScript Survivors Game tutorial](https://www.youtube.com/watch?v=GwCiGixlqiU)
 
-The intent here is to add small, proof-of-concept implementations of basic stuff that most games have.
+The intent here is to add small, proof-of-concept implementations of basic stuff that most games
+have to the excellent tutorial already included in the base tutorial.
 
 # Feature TODO
 * Score for enemies killed
