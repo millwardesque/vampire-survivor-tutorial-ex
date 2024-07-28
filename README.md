@@ -5,11 +5,11 @@ The intent here is to add small, proof-of-concept implementations of basic stuff
 have to the excellent tutorial already included in the base tutorial.
 
 # Feature TODO
+* Game reset from Game-over screen
 * Score for enemies killed
+* High-score table
 * Game start screen
 * Game pause
-* Game reset
-* High-score table
 * Persistent high-score
 * Sound FX
 * Music
