@@ -8,9 +8,11 @@ have to the excellent tutorial already included in the base tutorial.
 * Game reset from Game-over screen
 	* ~~Button to trigger reset~~
 	* Reset function
-		* Hide Game-over screen
-		* Unpause game
-		* Delete all mobs
+		* ~~Hide Game-over screen~~
+		* ~~Unpause game~~
+		* ~~Delete all mobs~~
+		* Create reset-game signal
+		* Move enemy-reset to Enemies container and process reset-game signal
 		* Reset player position
 		* Reset player health
 		* Reset timers
