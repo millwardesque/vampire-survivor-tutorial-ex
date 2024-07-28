@@ -1,5 +1,6 @@
 extends Node2D
 
+signal reset_level
 	
 func spawn_mob():
 	var new_mob = preload("res://Mob.tscn").instantiate()
@@ -19,9 +20,9 @@ func _on_player_health_depleted():
 	%Player.health = 1000000 # @DEBUG Temporarily used to prevent re-pausing
 
 func _on_reset_game_clicked():
-	reset_game()
+	emit_signal("reset_level")
 
-func reset_game():
+func _on_reset_level():
 	for enemy in %Enemies.get_children():
 		%Enemies.remove_child(enemy)
 		enemy.queue_free()

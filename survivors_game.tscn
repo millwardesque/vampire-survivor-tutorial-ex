@@ -109,6 +109,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Restart game"
 
+[connection signal="reset_level" from="." to="." method="_on_reset_level"]
 [connection signal="health_depleted" from="SandboxLevel/Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="SandboxLevel/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="GameOverScreen/Button" to="." method="_on_reset_game_clicked"]
