@@ -6,6 +6,15 @@ have to the excellent tutorial already included in the base tutorial.
 
 # Feature TODO
 * Game reset from Game-over screen
+	* ~~Button to trigger reset~~
+	* Reset function
+	* Delete all mobs
+	* Reset player position
+	* Reset player health
+	* Reset timers
+	* Hide Game-over screen
+	* Unpause game
+	
 * Score for enemies killed
 * High-score table
 * Game start screen

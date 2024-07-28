@@ -21,3 +21,6 @@ func _on_spawn_timer_timeout():
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true
 	get_tree().paused = true
+
+func _on_reset_game_clicked():
+	print('RESET GAME!')
