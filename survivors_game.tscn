@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://nxcul3mfumb7"]
+[gd_scene load_steps=6 format=3 uid="uid://nxcul3mfumb7"]
 
 [ext_resource type="PackedScene" uid="uid://bmpopsk75n4pn" path="res://player.tscn" id="1_ki24f"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_wvcjb"]
 [ext_resource type="PackedScene" uid="uid://rqpcme5v2oca" path="res://pine_tree.tscn" id="2_auc2b"]
+[ext_resource type="Script" path="res://Enemies.gd" id="4_vj5al"]
 
 [sub_resource type="Curve2D" id="Curve2D_qpewy"]
 _data = {
@@ -64,6 +65,7 @@ autostart = true
 
 [node name="Enemies" type="Node" parent="SandboxLevel"]
 unique_name_in_owner = true
+script = ExtResource("4_vj5al")
 
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -110,6 +112,7 @@ theme_override_font_sizes/font_size = 40
 text = "Restart game"
 
 [connection signal="reset_level" from="." to="." method="_on_reset_level"]
+[connection signal="reset_level" from="." to="SandboxLevel/Enemies" method="_on_reset_level"]
 [connection signal="health_depleted" from="SandboxLevel/Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="SandboxLevel/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="GameOverScreen/Button" to="." method="_on_reset_game_clicked"]

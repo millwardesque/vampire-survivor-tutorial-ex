@@ -22,10 +22,6 @@ func _on_player_health_depleted():
 func _on_reset_game_clicked():
 	emit_signal("reset_level")
 
-func _on_reset_level():
-	for enemy in %Enemies.get_children():
-		%Enemies.remove_child(enemy)
-		enemy.queue_free()
-		
+func _on_reset_level():	
 	%GameOverScreen.visible = false
 	%SandboxLevel.get_tree().paused = false;

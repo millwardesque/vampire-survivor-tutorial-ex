@@ -11,10 +11,11 @@ have to the excellent tutorial already included in the base tutorial.
 		* ~~Hide Game-over screen~~
 		* ~~Unpause game~~
 		* ~~Delete all mobs~~
-		* Create reset-game signal
-		* Move enemy-reset to Enemies container and process reset-game signal
-		* Reset player position
-		* Reset player health
+		* ~~Create reset-game signal~~
+		* ~~Move enemy-reset to Enemies container and process reset-game signal~~
+		* ~~Reset player health~~
+		* Try calling get_tree().reset_scene() instead of all that earlier stuff
+		* Reset player position		
 		* Reset timers
 	* Remove hardcoded player node path from Mob.gd
 	
