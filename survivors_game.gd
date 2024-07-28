@@ -1,9 +1,5 @@
 extends Node2D
 
-func _ready():
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
 	
 func spawn_mob():
 	var new_mob = preload("res://Mob.tscn").instantiate()
@@ -13,14 +9,19 @@ func spawn_mob():
 	
 	add_child(new_mob)	
 
-
 func _on_spawn_timer_timeout():
 	spawn_mob()
 
-
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true
-	get_tree().paused = true
+	%SandboxLevel.get_tree().paused = true;
+	
+	%Player.health = 1000000 # @DEBUG Temporarily used to prevent re-pausing
+		
 
 func _on_reset_game_clicked():
-	print('RESET GAME!')
+	reset_game()
+
+func reset_game():
+	%GameOverScreen.visible = false
+	%SandboxLevel.get_tree().paused = false;

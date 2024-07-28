@@ -5,7 +5,7 @@ const STARTING_HEALTH = 3
 
 var health = STARTING_HEALTH
 
-@onready var player = get_node("/root/Game/Player")
+@onready var player = get_node("/root/Game/SandboxLevel/Player")
 
 func _ready():
 	%Slime.play_walk()

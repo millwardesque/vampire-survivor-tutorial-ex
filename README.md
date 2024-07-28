@@ -8,12 +8,13 @@ have to the excellent tutorial already included in the base tutorial.
 * Game reset from Game-over screen
 	* ~~Button to trigger reset~~
 	* Reset function
-	* Delete all mobs
-	* Reset player position
-	* Reset player health
-	* Reset timers
-	* Hide Game-over screen
-	* Unpause game
+		* Hide Game-over screen
+		* Unpause game
+		* Delete all mobs
+		* Reset player position
+		* Reset player health
+		* Reset timers
+	* Remove hardcoded player node path from Mob.gd
 	
 * Score for enemies killed
 * High-score table

@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal health_depleted
 
 const MAX_HEALTH = 100.0
-const DAMAGE_RATE_PER_SECOND = 5.0
+const DAMAGE_RATE_PER_SECOND = 30.0
 const MIN_WALK_ANIMATION_THRESHOLD = 0
 const MOVEMENT_SPEED = 600
 
