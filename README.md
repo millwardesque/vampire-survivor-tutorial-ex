@@ -6,6 +6,9 @@ have to the excellent tutorial already included in the base tutorial.
 
 # Feature TODO
 * Game reset from Game-over screen
+	* ~~Button to trigger reset~~
+	* ~~Reset function~~
+	
 * Score for enemies killed
 * High-score table
 * Game start screen

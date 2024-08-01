@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://nxcul3mfumb7"]
+[gd_scene load_steps=6 format=3 uid="uid://nxcul3mfumb7"]
 
 [ext_resource type="PackedScene" uid="uid://bmpopsk75n4pn" path="res://player.tscn" id="1_ki24f"]
-[ext_resource type="Script" path="res://survivors_game.gd" id="1_wvcjb"]
+[ext_resource type="Script" path="res://game.gd" id="1_wvcjb"]
 [ext_resource type="PackedScene" uid="uid://rqpcme5v2oca" path="res://pine_tree.tscn" id="2_auc2b"]
 
 [sub_resource type="Curve2D" id="Curve2D_qpewy"]
@@ -10,56 +10,75 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="GDScript" id="GDScript_uihhk"]
+script/source = "extends Node
+
+
+func _on_reset_level():
+	for enemy in get_children():
+		remove_child(enemy)
+		enemy.queue_free()
+"
+
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_wvcjb")
 
-[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+[node name="SandboxLevel" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="SandboxLevel"]
 layer = -1
 
-[node name="BackgroundColour" type="ColorRect" parent="BackgroundLayer"]
+[node name="BackgroundColour" type="ColorRect" parent="SandboxLevel/BackgroundLayer"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="Player" parent="." instance=ExtResource("1_ki24f")]
+[node name="Player" parent="SandboxLevel" instance=ExtResource("1_ki24f")]
+unique_name_in_owner = true
 position = Vector2(840, 564)
 
-[node name="SpawnPath" type="Path2D" parent="Player"]
+[node name="SpawnPath" type="Path2D" parent="SandboxLevel/Player"]
 position = Vector2(-840, -564)
 curve = SubResource("Curve2D_qpewy")
 
-[node name="SpawnPathFollower" type="PathFollow2D" parent="Player/SpawnPath"]
+[node name="SpawnPathFollower" type="PathFollow2D" parent="SandboxLevel/Player/SpawnPath"]
 unique_name_in_owner = true
 position = Vector2(2084, -211)
 rotation = 1.56682
 
-[node name="PineTree" parent="." instance=ExtResource("2_auc2b")]
+[node name="PineTree" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(422, 305)
 
-[node name="PineTree2" parent="." instance=ExtResource("2_auc2b")]
+[node name="PineTree2" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(785, 394)
 
-[node name="PineTree3" parent="." instance=ExtResource("2_auc2b")]
+[node name="PineTree3" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(829, 836)
 
-[node name="PineTree4" parent="." instance=ExtResource("2_auc2b")]
+[node name="PineTree4" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(1081, 543)
 
-[node name="PineTree5" parent="." instance=ExtResource("2_auc2b")]
+[node name="PineTree5" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(654, 731)
 
-[node name="PineTree6" parent="." instance=ExtResource("2_auc2b")]
+[node name="PineTree6" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(383, 736)
 
-[node name="PineTree7" parent="." instance=ExtResource("2_auc2b")]
+[node name="PineTree7" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(1500, 726)
 
-[node name="SpawnTimer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="SandboxLevel"]
 wait_time = 0.3
 autostart = true
 
+[node name="Enemies" type="Node" parent="SandboxLevel"]
+unique_name_in_owner = true
+script = SubResource("GDScript_uihhk")
+
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOverScreen"]
@@ -86,5 +105,22 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 152
 text = "Game Over"
 
-[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[node name="Restart Game" type="Button" parent="GameOverScreen"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = 98.0
+offset_right = 169.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Restart game"
+
+[connection signal="health_depleted" from="SandboxLevel/Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="SandboxLevel/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="GameOverScreen/Restart Game" to="." method="_on_reset_game_clicked"]
