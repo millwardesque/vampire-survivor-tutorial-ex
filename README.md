@@ -7,10 +7,7 @@ have to the excellent tutorial already included in the base tutorial.
 # Feature TODO
 * Game reset from Game-over screen
 	* ~~Button to trigger reset~~
-	* Reset function
-		* ~~Create reset-game signal~~
-		* ~~Reload scene on click~~
-	* Remove hardcoded player node path from Mob.gd
+	* ~~Reset function~~
 	
 * Score for enemies killed
 * High-score table
