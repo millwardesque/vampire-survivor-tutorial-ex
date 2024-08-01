@@ -1,6 +1,4 @@
 extends Node2D
-
-signal reset_level
 	
 func spawn_mob():
 	var new_mob = preload("res://Mob.tscn").instantiate()
@@ -15,13 +13,9 @@ func _on_spawn_timer_timeout():
 
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true
-	%SandboxLevel.get_tree().paused = true;
+	get_tree().paused = true;
 	
-	%Player.health = 1000000 # @DEBUG Temporarily used to prevent re-pausing
-
 func _on_reset_game_clicked():
-	emit_signal("reset_level")
-
-func _on_reset_level():	
-	%GameOverScreen.visible = false
-	%SandboxLevel.get_tree().paused = false;
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+	

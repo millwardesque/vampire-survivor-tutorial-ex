@@ -1,15 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://nxcul3mfumb7"]
 
 [ext_resource type="PackedScene" uid="uid://bmpopsk75n4pn" path="res://player.tscn" id="1_ki24f"]
-[ext_resource type="Script" path="res://survivors_game.gd" id="1_wvcjb"]
+[ext_resource type="Script" path="res://game.gd" id="1_wvcjb"]
 [ext_resource type="PackedScene" uid="uid://rqpcme5v2oca" path="res://pine_tree.tscn" id="2_auc2b"]
-[ext_resource type="Script" path="res://Enemies.gd" id="4_vj5al"]
 
 [sub_resource type="Curve2D" id="Curve2D_qpewy"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 2084, -211, 0, 0, 0, 0, 2090, 1298, 0, 0, 0, 0, -308, 1313, 0, 0, 0, 0, -308, -209, 0, 0, 0, 0, 2084, -211)
 }
 point_count = 5
+
+[sub_resource type="GDScript" id="GDScript_uihhk"]
+script/source = "extends Node
+
+
+func _on_reset_level():
+	for enemy in get_children():
+		remove_child(enemy)
+		enemy.queue_free()
+"
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -65,10 +74,11 @@ autostart = true
 
 [node name="Enemies" type="Node" parent="SandboxLevel"]
 unique_name_in_owner = true
-script = ExtResource("4_vj5al")
+script = SubResource("GDScript_uihhk")
 
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOverScreen"]
@@ -95,7 +105,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 152
 text = "Game Over"
 
-[node name="Button" type="Button" parent="GameOverScreen"]
+[node name="Restart Game" type="Button" parent="GameOverScreen"]
 process_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -111,8 +121,6 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Restart game"
 
-[connection signal="reset_level" from="." to="." method="_on_reset_level"]
-[connection signal="reset_level" from="." to="SandboxLevel/Enemies" method="_on_reset_level"]
 [connection signal="health_depleted" from="SandboxLevel/Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="SandboxLevel/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="pressed" from="GameOverScreen/Button" to="." method="_on_reset_game_clicked"]
+[connection signal="pressed" from="GameOverScreen/Restart Game" to="." method="_on_reset_game_clicked"]
