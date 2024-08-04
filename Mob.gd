@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const MOB_SPEED = 300.0
+const POINTS_PER_KILL = 1
 const STARTING_HEALTH = 3
 
 var health = STARTING_HEALTH
@@ -27,3 +28,5 @@ func take_damage():
 		
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		
+		player.adjust_score(POINTS_PER_KILL)
