@@ -5,15 +5,15 @@ The intent here is to add small, proof-of-concept implementations of basic stuff
 have to the excellent tutorial already included in the base tutorial.
 
 # Feature TODO
-* Game reset from Game-over screen
-	* ~~Button to trigger reset~~
-	* ~~Reset function~~
-	
-* Score for enemies killed
+See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date list
+
+* ~~ Game reset from Game-over screen ~~
+* ~~ Score for enemies killed ~~
 * High-score table
 * Game start screen
 * Game pause
 * Persistent high-score
+* One bullet per item?
 * Sound FX
 * Music
 * Temporary power-ups
