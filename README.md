@@ -10,10 +10,11 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * ~~ Game reset from Game-over screen ~~
 * ~~ Score for enemies killed ~~
 * ~~ Game pause ~~
-* One bullet per item?
+* Items spawn randomly
+* Enemies drop items
+* Item used on touch
 * Sound FX
 * Music
-* Temporary power-ups
 * Controller support
 * A new kind of enemy. Projectile firing?
 * A new kind of gun. Area-of-effect?
