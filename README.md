@@ -9,10 +9,7 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 
 * ~~ Game reset from Game-over screen ~~
 * ~~ Score for enemies killed ~~
-* High-score table
-* Game start screen
-* Game pause
-* Persistent high-score
+* ~~ Game pause ~~
 * One bullet per item?
 * Sound FX
 * Music
@@ -24,3 +21,6 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * Theme
 * A second level
 * Juice (particles, camera-shake, etc.)
+* Game start screen
+* High-score table
+* Persistent high-score

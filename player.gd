@@ -19,9 +19,8 @@ func adjust_score(amount: int):
 	score += amount
 	
 	emit_signal("score_change", score)
-	
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * MOVEMENT_SPEED
 	move_and_slide()
