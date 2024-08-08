@@ -11,6 +11,11 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * ~~ Score for enemies killed ~~
 * ~~ Game pause ~~
 * Items spawn randomly
+	* ~~ Item sprite ~~
+	* ~~ Item collision detection ~~
+	* ~~ Item behaviour on pickup ~~
+	* Create spawner
+	* Make generic / reusable
 * Enemies drop items
 * Item used on touch
 * Sound FX
@@ -25,3 +30,7 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * Game start screen
 * High-score table
 * Persistent high-score
+
+
+# Attribution / special thanks
+* //items/roguelikeitems.png by [@JoeCreates](https://x.com/joecreates)

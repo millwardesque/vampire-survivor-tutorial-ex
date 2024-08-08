@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://nxcul3mfumb7"]
+[gd_scene load_steps=9 format=3 uid="uid://nxcul3mfumb7"]
 
 [ext_resource type="PackedScene" uid="uid://bmpopsk75n4pn" path="res://player.tscn" id="1_ki24f"]
 [ext_resource type="Script" path="res://game.gd" id="1_wvcjb"]
 [ext_resource type="PackedScene" uid="uid://rqpcme5v2oca" path="res://pine_tree.tscn" id="2_auc2b"]
 [ext_resource type="PackedScene" uid="uid://c238tdq0lhcl8" path="res://in_game_ux.tscn" id="4_8faun"]
+[ext_resource type="PackedScene" uid="uid://ddclddyrk2v3h" path="res://item_template.tscn" id="4_ndlos"]
 [ext_resource type="PackedScene" uid="uid://sx8cwas3voub" path="res://paused_screen.tscn" id="5_88t8x"]
 
 [sub_resource type="Curve2D" id="Curve2D_qpewy"]
@@ -69,6 +70,9 @@ position = Vector2(383, 736)
 
 [node name="PineTree7" parent="SandboxLevel" instance=ExtResource("2_auc2b")]
 position = Vector2(1500, 726)
+
+[node name="ItemTemplate" parent="SandboxLevel" instance=ExtResource("4_ndlos")]
+position = Vector2(275, 522)
 
 [node name="SpawnTimer" type="Timer" parent="SandboxLevel"]
 wait_time = 0.3
