@@ -7,6 +7,9 @@ func _input(event):
 		
 func _on_spawn_timer_timeout():
 	spawn_mob()
+	
+func _on_item_spawn_timer_timeout():
+	spawn_item()
 
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true
@@ -27,3 +30,11 @@ func spawn_mob():
 	new_mob.global_position = %SpawnPathFollower.global_position
 	
 	%Enemies.add_child(new_mob)	
+	
+func spawn_item():
+	var new_item = preload("res://item_template.tscn").instantiate()
+	
+	%SpawnPathFollower.progress_ratio = randf()
+	new_item.global_position = %SpawnPathFollower.global_position
+	
+	%Items.add_child(new_item)	

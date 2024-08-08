@@ -10,19 +10,15 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * ~~ Game reset from Game-over screen ~~
 * ~~ Score for enemies killed ~~
 * ~~ Game pause ~~
-* Items spawn randomly
-	* ~~ Item sprite ~~
-	* ~~ Item collision detection ~~
-	* ~~ Item behaviour on pickup ~~
-	* Create spawner
-	* Make generic / reusable
+* ~~ Items spawn randomly ~~
 * Enemies drop items
-* Item used on touch
 * Sound FX
 * Music
 * Controller support
 * A new kind of enemy. Projectile firing?
 * A new kind of gun. Area-of-effect?
+* Health item
+* Kill-all-mobs item
 * Environmental hazard
 * Theme
 * A second level
