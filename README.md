@@ -11,6 +11,8 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * ~~ Score for enemies killed ~~
 * ~~ Game pause ~~
 * ~~ Items spawn randomly ~~
+* Level boundaries
+* Level obstacles (e.g. more trees)
 * Enemies drop items
 * Sound FX
 * Music
