@@ -12,6 +12,8 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * ~~ Game pause ~~
 * ~~ Items spawn randomly ~~
 * Level boundaries
+	* Do it the painful way
+	* Learn about tilemap
 * Level obstacles (e.g. more trees)
 * Enemies drop items
 * Sound FX
@@ -32,3 +34,4 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 
 # Attribution / special thanks
 * //items/roguelikeitems.png by [@JoeCreates](https://x.com/joecreates)
+* //walls/old_walls.png by [Pavel Kutejnikov](https://opengameart.org/content/wall-tiles-0)
