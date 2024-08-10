@@ -12,7 +12,8 @@ See [Miro board](https://miro.com/app/board/uXjVKtMZqqE=/) for an up-to-date lis
 * ~~ Game pause ~~
 * ~~ Items spawn randomly ~~
 * Level boundaries
-	* Do it the painful way
+	* ~~ Do it the painful way ~~
+	* Keep enemies spawning inside the level boundaries
 	* Learn about tilemap
 * Level obstacles (e.g. more trees)
 * Enemies drop items
